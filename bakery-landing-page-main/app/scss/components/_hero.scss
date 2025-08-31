@@ -113,7 +113,7 @@
                 }
             }
 
-            &.swiper-slide-next {
+            &.swiper-slide-active {
                 .hero__slide__img {
                     @include flex(center, center);
 
