@@ -16,7 +16,8 @@ A simple static landing page for the Diya Dilusso cake studio. The site lives in
     ├── vendor/
     ├── index.html
     ├── menu.html
-    └── about.html
+    ├── about.html
+    └── contact.html
 ```
 
 ## Viewing the site
