@@ -1,89 +1,43 @@
 @use "../abstracts/" as *;
 
 .section__footer {
-    background-image: $bg-linear-reverse;
-    padding-bottom: 0;
-    overflow: hidden;
+    background-color: $main-color;
+    color: $txt-white;
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 3rem;
-    position: relative;
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding: 4rem 0;
 
-    @include tablet {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    &__img {
-        @include tablet {
-            display: none;
-        }
-    }
-
-    &__menus {
-        padding-left: 4rem;
-        @include flex(flex-start, flex-start);
-        position: relative;
-
-        @include tablet {
-            padding-left: 0;
-        }
-
-        & > * ~ * {
-            margin-left: 4rem;
-        }
-
-        &__col {
-            width: max-content;
-
-            @include mobile {
-                width: unset;
-            }
-
-            & > * ~ * {
-                margin-top: 1rem;
-            }
-
-            font-size: 1.5rem;
-
-            a {
-                transition: color 0.3s ease;
-            }
-
-            a:hover {
-                color: $main-color;
-            }
-        }
-
-        .company {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1;
-
-            @include tablet {
-                position: unset;
-            }
-
-            @include mobile {
-                display: none;
-            }
-        }
-
+    &__logo {
         img {
-            position: absolute;
-            right: -250px;
-            bottom: -110px;
-            transform: rotate(-45deg);
-            width: 400px;
+            max-width: 180px;
+            height: auto;
+        }
+    }
 
-            @include tablet {
-                display: none;
+    &__nav {
+        @include flex(center, center);
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        a {
+            color: $txt-white;
+            font-family: $font-heading;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $body-bg;
             }
         }
+    }
+
+    &__copy {
+        font-size: 1.4rem;
+        color: rgba($txt-white, 0.7);
     }
 }
+
