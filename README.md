@@ -12,9 +12,11 @@ A simple static landing page for the Diya Dilusso cake studio. The site lives in
     ├── app/
     │   ├── js/
     │   └── scss/
-    ├── assets/
     ├── dist/
-    └── index.html
+    ├── vendor/
+    ├── index.html
+    ├── menu.html
+    └── about.html
 ```
 
 ## Viewing the site
