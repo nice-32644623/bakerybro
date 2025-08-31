@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
     const overlay = document.querySelector('.mobile-overlay');
     const header = document.querySelector('header');
+    if (header) requestAnimationFrame(() => header.classList.add('loaded'));
 
     if (toggle) {
         toggle.addEventListener('click', () => {

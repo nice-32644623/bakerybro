@@ -43,6 +43,8 @@
 
             &__img {
                 position: relative;
+                animation: float 6s ease-in-out infinite;
+                will-change: transform;
 
                 .btn {
                     position: absolute;
@@ -138,5 +140,14 @@
                 height: 5px;
             }
         }
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
