@@ -273,8 +273,8 @@ header.active {
   }
 }
 .hero .swiper .swiper-slide img {
-  transform: scale(0.4);
-  transform-origin: right bottom;
+  transform: scale(1);
+  transform-origin: center;
   transition: transform 0.6s ease;
 }
 @media only screen and (max-width: 600px) {
@@ -283,7 +283,7 @@ header.active {
   }
 }
 .hero .swiper .swiper-slide-active img, .hero .swiper .swiper-slide-duplicate-prev img {
-  transform: scale(0.4);
+  transform: scale(1);
 }
 @media only screen and (max-width: 600px) {
   .hero .swiper .swiper-slide-active img, .hero .swiper .swiper-slide-duplicate-prev img {
@@ -296,7 +296,7 @@ header.active {
   }
 }
 .hero .swiper .swiper-slide-active img {
-  transform-origin: left bottom;
+  transform-origin: center;
 }
 .hero .swiper .swiper-slide.swiper-slide-active .hero__slide__img {
   display: flex;
@@ -312,7 +312,7 @@ header.active {
   opacity: 1;
 }
 .hero .swiper .swiper-slide.swiper-slide-active img {
-  transform: scale(1.4);
+  transform: scale(1);
   transform-origin: center;
 }
 @media only screen and (max-width: 600px) {

@@ -83,8 +83,8 @@
 
         .swiper-slide {
             img {
-                transform: scale(0.4);
-                transform-origin: right bottom;
+                transform: scale(1);
+                transform-origin: center;
                 transition: transform 0.6s ease;
 
                 @include mobile {
@@ -95,7 +95,7 @@
             &-active,
             &-duplicate-prev {
                 img {
-                    transform: scale(0.4);
+                    transform: scale(1);
 
                     @include mobile {
                         transform: scale(1);
@@ -109,7 +109,7 @@
 
             &-active {
                 img {
-                    transform-origin: left bottom;
+                    transform-origin: center;
                 }
             }
 
@@ -127,7 +127,7 @@
                 }
 
                 img {
-                    transform: scale(1.4);
+                    transform: scale(1);
                     transform-origin: center;
 
                     @include mobile {
