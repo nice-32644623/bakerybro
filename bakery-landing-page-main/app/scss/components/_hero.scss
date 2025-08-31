@@ -92,28 +92,7 @@
                 }
             }
 
-            &-active,
-            &-duplicate-prev {
-                img {
-                    transform: scale(0.4);
-
-                    @include mobile {
-                        transform: scale(1);
-                    }
-                }
-
-                @include mobile {
-                    transform: scale(1);
-                }
-            }
-
-            &-active {
-                img {
-                    transform-origin: left bottom;
-                }
-            }
-
-            &.swiper-slide-next {
+            &.swiper-slide-active {
                 .hero__slide__img {
                     @include flex(center, center);
 

@@ -33,9 +33,9 @@
     <!-- END HEADER -->
 
     <!-- HERO SLIDER -->
-    <div class="hero">
+    <div class="hero snap-section" data-parallax="-0.2">
         <div class="container">
-            <div class="swiper">
+            <div class="swiper hero-swiper">
                 <div class="swiper-wrapper">
                     <!-- slide -->
                     <div class="swiper-slide">
@@ -44,7 +44,7 @@
                                 Cheese
                             </div>
                             <div class="hero__slide__img">
-                                <img src="./assets/cupcake (6).png" alt="">
+                                <img src="./assets/cupcake (6).png" alt="Cheese cupcake">
                                 <button class="btn btn-right" data-speed="-5">$4.5</button>
                                 <button class="btn btn-left" data-speed="-5">Add to bag</button>
                             </div>
@@ -58,7 +58,7 @@
                                 Blueberry
                             </div>
                             <div class="hero__slide__img">
-                                <img src="./assets/cupcake (1).png" alt="">
+                                <img src="./assets/cupcake (1).png" alt="Blueberry cupcake">
                                 <button class="btn btn-right" data-speed="-5">$4.5</button>
                                 <button class="btn btn-left" data-speed="-5">Add to bag</button>
                             </div>
@@ -72,7 +72,7 @@
                                 Chocolate
                             </div>
                             <div class="hero__slide__img">
-                                <img src="./assets/cupcake (3).png" alt="">
+                                <img src="./assets/cupcake (3).png" alt="Chocolate cupcake">
                                 <button class="btn btn-right" data-speed="-5">$4.5</button>
                                 <button class="btn btn-left" data-speed="-5">Add to bag</button>
                             </div>
@@ -86,7 +86,7 @@
                                 Strawberry
                             </div>
                             <div class="hero__slide__img">
-                                <img src="./assets/cupcake (2).png" alt="">
+                                <img src="./assets/cupcake (2).png" alt="Strawberry cupcake">
                                 <button class="btn btn-right" data-speed="-5">$4.5</button>
                                 <button class="btn btn-left" data-speed="-5">Add to bag</button>
                             </div>
@@ -100,7 +100,7 @@
                                 Chocolate
                             </div>
                             <div class="hero__slide__img">
-                                <img src="./assets/cupcake (5).png" alt="">
+                                <img src="./assets/cupcake (5).png" alt="Chocolate cupcake">
                                 <button class="btn btn-right" data-speed="-5">$4.5</button>
                                 <button class="btn btn-left" data-speed="-5">Add to bag</button>
                             </div>
@@ -108,116 +108,127 @@
                     </div>
                     <!-- end slide -->
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination hero-pagination"></div>
             </div>
         </div>
     </div>
     <!-- END HERO SLIDER -->
 
     <!-- HOT SELLING SECTION -->
-    <div class="section">
+    <div class="section snap-section" data-parallax="-0.1">
         <div class="container">
             <div class="section__header">
                 Hot selling recipe
             </div>
             <div class="section__content">
-                <div class="product-grid">
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (1).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
+                <div class="swiper products-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-grid">
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (1).png" alt="Blueberry cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Blueberry cake</div>
+                                </div>
+                                <!-- end single product -->
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (2).png" alt="Strawberry cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Strawberry cake</div>
+                                </div>
+                                <!-- end single product -->
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (3).png" alt="Chocolate cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Chocolate cake</div>
+                                </div>
+                                <!-- end single product -->
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (5).png" alt="Caramel cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Caramel cake</div>
+                                </div>
+                                <!-- end single product -->
                             </div>
                         </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Blueberry cake</div>
-                    </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (2).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
+                        <div class="swiper-slide">
+                            <div class="product-grid">
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (6).png" alt="Cheese cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Cheese cake</div>
+                                </div>
+                                <!-- end single product -->
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (7).png" alt="Chocolate cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Chocolate cake</div>
+                                </div>
+                                <!-- end single product -->
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (11).png" alt="Milk cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Milk cake</div>
+                                </div>
+                                <!-- end single product -->
+                                <!-- single product -->
+                                <div class="product-card">
+                                    <div class="product-card__img">
+                                        <img src="./assets/cupcake (9).png" alt="Chocolate cake">
+                                        <div class="btn-wraper">
+                                            <button class="btn btn-small">Add to bag</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__price">$5.65</div>
+                                    <div class="product-card__name">Chocolate cake</div>
+                                </div>
+                                <!-- end single product -->
                             </div>
                         </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Strawberry cake</div>
                     </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (3).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
-                            </div>
-                        </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Chocolate cake</div>
-                    </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (5).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
-                            </div>
-                        </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Caramel cake</div>
-                    </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (6).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
-                            </div>
-                        </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Cheese cake</div>
-                    </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (7).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
-                            </div>
-                        </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Chocolateake</div>
-                    </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (11).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
-                            </div>
-                        </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Milk cake</div>
-                    </div>
-                    <!-- end single product -->
-                    <!-- single product -->
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="./assets/cupcake (9).png" alt="">
-                            <div class="btn-wraper">
-                                <button class="btn btn-small">Add to bag</button>
-                            </div>
-                        </div>
-                        <div class="product-card__price">$5.65</div>
-                        <div class="product-card__name">Chocolate cake</div>
-                    </div>
-                    <!-- end single product -->
+                    <div class="swiper-pagination products-pagination"></div>
                 </div>
             </div>
         </div>
@@ -225,11 +236,11 @@
     <!-- END HOT SELLING SECTION -->
 
     <!-- ABOUT SECTION -->
-    <div class="section">
+    <div class="section snap-section" data-parallax="-0.1">
         <div class="container">
             <div class="about">
                 <div class="about__img">
-                    <img src="./assets/cupcake (8).png" alt="">
+                    <img src="./assets/cupcake (8).png" alt="Cupcake assortment">
                 </div>
                 <div class="about__info">
                     <div class="section__header">Welcome</div>
@@ -247,11 +258,11 @@
     <!-- END ABOUT SECTION -->
 
     <!-- FOOTER SECTION -->
-    <div class="section section__footer">
+    <div class="section section__footer snap-section" data-parallax="-0.1">
         <div class="container">
             <div class="footer">
                 <div class="footer__img">
-                    <img src="./assets/cupcake (1).jpg" alt="">
+                    <img src="./assets/cupcake (1).jpg" alt="Cupcake logo">
                 </div>
                 <div class="footer__menus">
                     <ul class="footer__menus__col">
@@ -272,8 +283,8 @@
                         <li><a href="#">Cakes</a></li>
                         <li><a href="#">Cookies</a></li>
                     </ul>
-                    <div class="company">Tran Anh <span class="txt-main">Bakery</div>
-                    <img src="./assets/cupcake (5).png" alt="">
+                    <div class="company">Tran Anh <span class="txt-main">Bakery</span></div>
+                    <img src="./assets/cupcake (5).png" alt="Cupcake decoration">
                 </div>
             </div>
         </div>

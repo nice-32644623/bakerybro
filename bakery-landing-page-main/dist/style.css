@@ -8,6 +8,7 @@
 
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 @media only screen and (max-width: 1024px) {
   html {
@@ -27,6 +28,7 @@ body {
   line-height: 1.5;
   position: relative;
   overflow-x: hidden;
+  transition: filter 0.2s ease-out;
 }
 
 a {
@@ -89,6 +91,10 @@ img {
 
 .txt-main {
   color: #f54749;
+}
+
+[data-parallax] {
+  will-change: transform;
 }
 
 header {
@@ -282,45 +288,29 @@ header.active {
     transform: scale(1);
   }
 }
-.hero .swiper .swiper-slide-active img, .hero .swiper .swiper-slide-duplicate-prev img {
-  transform: scale(0.4);
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide-active img, .hero .swiper .swiper-slide-duplicate-prev img {
-    transform: scale(1);
-  }
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide-active, .hero .swiper .swiper-slide-duplicate-prev {
-    transform: scale(1);
-  }
-}
-.hero .swiper .swiper-slide-active img {
-  transform-origin: left bottom;
-}
-.hero .swiper .swiper-slide.swiper-slide-next .hero__slide__img {
+.hero .swiper .swiper-slide.swiper-slide-active .hero__slide__img {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 @media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide.swiper-slide-next .hero__slide__img {
+  .hero .swiper .swiper-slide.swiper-slide-active .hero__slide__img {
     display: block;
   }
 }
-.hero .swiper .swiper-slide.swiper-slide-next .hero__slide__txt {
+.hero .swiper .swiper-slide.swiper-slide-active .hero__slide__txt {
   opacity: 1;
 }
-.hero .swiper .swiper-slide.swiper-slide-next img {
+.hero .swiper .swiper-slide.swiper-slide-active img {
   transform: scale(1.4);
   transform-origin: center;
 }
 @media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide.swiper-slide-next img {
+  .hero .swiper .swiper-slide.swiper-slide-active img {
     transform: scale(1);
   }
 }
-.hero .swiper .swiper-slide.swiper-slide-next button {
+.hero .swiper .swiper-slide.swiper-slide-active button {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
