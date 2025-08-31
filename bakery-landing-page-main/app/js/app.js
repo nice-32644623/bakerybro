@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: false,
             slidesPerView: 1,
             centeredSlides: true,
+            mousewheel: {
+                forceToAxis: true
+            },
             pagination: {
                 el: '.menu-pagination',
                 type: 'bullets',

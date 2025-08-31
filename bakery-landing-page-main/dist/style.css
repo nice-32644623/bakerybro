@@ -695,6 +695,12 @@ header.hide {
   background: #ccc;
   margin: 0 auto;
 }
+.menu .swiper .menu__slide__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .menu .swiper .menu__slide__title {
   font-family: "Playfair Display", serif;
   font-size: 4rem;
