@@ -82,6 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sections.forEach(section => observer.observe(section));
 
+        const htmlEl = document.documentElement;
+
+        const scrollToSection = (target) => {
+            htmlEl.style.scrollSnapType = 'none';
+            target.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                htmlEl.style.scrollSnapType = '';
+                isScrollingSection = false;
+            }, 700);
+        };
+
         window.addEventListener('wheel', (e) => {
             if (isScrollingSection) return;
 
@@ -114,17 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.deltaY > 0 && activeSection < sections.length - 1) {
                 e.preventDefault();
                 isScrollingSection = true;
-                sections[activeSection + 1].scrollIntoView({ behavior: 'smooth' });
+                scrollToSection(sections[activeSection + 1]);
             } else if (e.deltaY < 0 && activeSection > 0) {
                 e.preventDefault();
                 isScrollingSection = true;
-                sections[activeSection - 1].scrollIntoView({ behavior: 'smooth' });
-            }
-
-            if (isScrollingSection) {
-                setTimeout(() => {
-                    isScrollingSection = false;
-                }, 1000);
+                scrollToSection(sections[activeSection - 1]);
             }
         }, { passive: false });
     }
