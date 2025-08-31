@@ -37,16 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-
-        swiperElement.addEventListener('wheel', (e) => {
-            if (e.deltaY > 0 && !swiper.isEnd) {
-                e.preventDefault();
-                swiper.slideNext();
-            } else if (e.deltaY < 0 && !swiper.isBeginning) {
-                e.preventDefault();
-                swiper.slidePrev();
-            }
-        }, { passive: false });
     }
 
     const heroSection = document.querySelector('.hero');
@@ -60,6 +50,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.transform = `translateX(${x}px) translateY(${y}px)`;
             });
         });
+    }
+
+    const sections = Array.from(document.querySelectorAll('.snap-section'));
+    if (sections.length) {
+        let activeSection = 0;
+        let isScrollingSection = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activeSection = sections.indexOf(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => observer.observe(section));
+
+        window.addEventListener('wheel', (e) => {
+            if (isScrollingSection) return;
+
+            if (e.deltaY > 0 && activeSection < sections.length - 1) {
+                e.preventDefault();
+                isScrollingSection = true;
+                sections[activeSection + 1].scrollIntoView({ behavior: 'smooth' });
+            } else if (e.deltaY < 0 && activeSection > 0) {
+                e.preventDefault();
+                isScrollingSection = true;
+                sections[activeSection - 1].scrollIntoView({ behavior: 'smooth' });
+            }
+
+            if (isScrollingSection) {
+                setTimeout(() => {
+                    isScrollingSection = false;
+                }, 1000);
+            }
+        }, { passive: false });
     }
 
     const parallaxItems = document.querySelectorAll('[data-parallax]');
