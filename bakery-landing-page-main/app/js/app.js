@@ -17,12 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const swiper = new Swiper('.swiper', {
             direction: 'horizontal',
             loop: false,
-            slidesPerView: 1,
+            slidesPerView: 3,
+            centeredSlides: true,
+            initialSlide: 1,
             speed: 500,
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
                 clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    centeredSlides: false
+                },
+                600: {
+                    slidesPerView: 3,
+                    centeredSlides: true
+                }
             }
         });
 
