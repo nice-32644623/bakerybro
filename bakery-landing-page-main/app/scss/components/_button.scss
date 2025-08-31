@@ -3,20 +3,20 @@
 .btn {
     border: 0;
     outline: 0;
-    background-color: $main-color;
+    background: linear-gradient(135deg, $main-color, $accent-color);
     color: $txt-white;
     border-radius: $border-radius;
     padding: 1.1rem 2.5rem;
     font-size: 2.5rem;
     font-weight: 700;
     font-family: $font-family;
-    box-shadow: 0 4px 23px 6px rgba($main-color, 0.6);
+    box-shadow: 0 4px 23px 6px rgba($accent-color, 0.5);
     cursor: pointer;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     white-space: nowrap;
 
     &:hover {
-        box-shadow: 0 4px 23px 12px rgba($main-color, 0.6);
+        box-shadow: 0 6px 28px 12px rgba($accent-color, 0.6);
         transform: translateY(-3px);
     }
 

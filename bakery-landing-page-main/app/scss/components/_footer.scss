@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 .section__footer {
-    background-color: $main-color;
+    background: linear-gradient(135deg, $main-color, darken($main-color, 10%));
     color: $txt-white;
 }
 
@@ -30,7 +30,7 @@
             transition: color 0.3s ease;
 
             &:hover {
-                color: $body-bg;
+                color: $accent-color;
             }
         }
     }

@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    background-color: $body-bg;
+    background: linear-gradient(180deg, #fffefb 0%, $body-bg 100%);
     font-family: $font-family;
     font-weight: 400;
     line-height: 1.5;
@@ -34,6 +34,7 @@ body {
 a {
     text-decoration: none;
     color: unset;
+    transition: color 0.3s ease;
 }
 
 ul,
@@ -66,7 +67,7 @@ img {
             content: "";
             height: 10px;
             width: 10%;
-            background-color: $main-color;
+            background: linear-gradient(90deg, $main-color, $accent-color);
             position: absolute;
             left: 0;
             top: 100%;
@@ -105,7 +106,7 @@ img {
 [data-animate] {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 1s ease, transform 1s ease;
 
     &.visible {
         opacity: 1;
