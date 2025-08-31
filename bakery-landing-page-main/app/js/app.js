@@ -62,13 +62,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (header) {
-        window.addEventListener('scroll', () => {
+    const parallaxItems = document.querySelectorAll('[data-parallax]');
+    let lastScrollY = window.pageYOffset;
+    let blurTimeout;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+
+        if (header) {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
                 header.classList.add('shrink');
             } else {
                 header.classList.remove('shrink');
             }
-        });
-    }
+        }
+
+        if (parallaxItems.length) {
+            parallaxItems.forEach(el => {
+                const speed = parseFloat(el.dataset.parallax);
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        }
+
+        const diff = Math.abs(scrolled - lastScrollY);
+        document.body.style.filter = `blur(${Math.min(diff / 40, 3)}px)`;
+        clearTimeout(blurTimeout);
+        blurTimeout = setTimeout(() => {
+            document.body.style.filter = 'blur(0)';
+        }, 100);
+
+        lastScrollY = scrolled;
+    });
 });

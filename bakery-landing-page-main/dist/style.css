@@ -8,6 +8,7 @@
 
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 @media only screen and (max-width: 1024px) {
   html {
@@ -27,6 +28,7 @@ body {
   line-height: 1.5;
   position: relative;
   overflow-x: hidden;
+  transition: filter 0.2s ease-out;
 }
 
 a {
@@ -89,6 +91,10 @@ img {
 
 .txt-main {
   color: #f54749;
+}
+
+[data-parallax] {
+  will-change: transform;
 }
 
 header {
