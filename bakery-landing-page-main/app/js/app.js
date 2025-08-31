@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const swiperElement = document.querySelector('.swiper');
-    if (swiperElement) {
-        const swiper = new Swiper('.swiper', {
+    const heroSwiperEl = document.querySelector('.hero-swiper');
+    let heroSwiper;
+    if (heroSwiperEl) {
+        heroSwiper = new Swiper('.hero-swiper', {
             direction: 'horizontal',
             loop: false,
             slidesPerView: 3,
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             initialSlide: 1,
             speed: 500,
             pagination: {
-                el: '.swiper-pagination',
+                el: '.hero-pagination',
                 type: 'bullets',
                 clickable: true
             },
@@ -35,6 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     slidesPerView: 3,
                     centeredSlides: true
                 }
+            }
+        });
+    }
+
+    const productsSwiperEl = document.querySelector('.products-swiper');
+    let productsSwiper;
+    if (productsSwiperEl) {
+        productsSwiper = new Swiper('.products-swiper', {
+            direction: 'horizontal',
+            loop: false,
+            pagination: {
+                el: '.products-pagination',
+                type: 'bullets',
+                clickable: true
             }
         });
     }
@@ -69,6 +84,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('wheel', (e) => {
             if (isScrollingSection) return;
+
+            // Handle hero swiper in first section
+            if (activeSection === 0 && heroSwiper) {
+                if (e.deltaY > 0 && !heroSwiper.isEnd) {
+                    e.preventDefault();
+                    heroSwiper.slideNext();
+                    return;
+                } else if (e.deltaY < 0 && !heroSwiper.isBeginning) {
+                    e.preventDefault();
+                    heroSwiper.slidePrev();
+                    return;
+                }
+            }
+
+            // Handle products swiper in second section
+            if (activeSection === 1 && productsSwiper) {
+                if (e.deltaY > 0 && !productsSwiper.isEnd) {
+                    e.preventDefault();
+                    productsSwiper.slideNext();
+                    return;
+                } else if (e.deltaY < 0 && !productsSwiper.isBeginning) {
+                    e.preventDefault();
+                    productsSwiper.slidePrev();
+                    return;
+                }
+            }
 
             if (e.deltaY > 0 && activeSection < sections.length - 1) {
                 e.preventDefault();
