@@ -55,21 +55,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const menuSwiperEl = document.querySelector('.menu-swiper');
+    let menuSwiper;
     if (menuSwiperEl && window.Swiper) {
-        new Swiper('.menu-swiper', {
+        menuSwiper = new Swiper('.menu-swiper', {
             direction: 'horizontal',
             loop: false,
             slidesPerView: 1,
             centeredSlides: true,
-            mousewheel: {
-                forceToAxis: true
-            },
             pagination: {
                 el: '.menu-pagination',
                 type: 'bullets',
                 clickable: true
             }
         });
+
+        menuSwiperEl.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0 && !menuSwiper.isEnd) {
+                e.preventDefault();
+                menuSwiper.slideNext();
+            } else if (e.deltaY < 0 && !menuSwiper.isBeginning) {
+                e.preventDefault();
+                menuSwiper.slidePrev();
+            }
+        }, { passive: false });
     }
 
     const heroSection = document.querySelector('.hero');
