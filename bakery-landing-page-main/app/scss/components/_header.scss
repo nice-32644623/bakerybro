@@ -7,12 +7,18 @@ header {
     width: 100%;
     z-index: 99;
     height: $header-height;
+    transform: translateY(-100%);
+    opacity: 0;
+    background-color: rgba($body-bg, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba($main-color, 0.2);
     transition: height 0.3s ease, background-color 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease, transform 0.3s ease;
+    animation: headerDrop 0.6s ease forwards;
 
     &.shrink {
         height: $header-shrink-height;
-        background-color: $body-bg;
+        background-color: rgba($body-bg, 0.9);
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
         @include mobile {
@@ -26,6 +32,10 @@ header {
 
     &.active {
         background-color: $body-bg;
+    }
+
+    &.hide {
+        transform: translateY(-100%);
     }
 }
 
@@ -45,6 +55,8 @@ header {
     .logo {
         font-size: 3rem;
         font-weight: 700;
+        font-family: $font-heading;
+        letter-spacing: 0.05rem;
         color: $main-color;
     }
 
@@ -61,18 +73,49 @@ header {
 
         li {
             font-size: 1.5rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: navFade 0.8s forwards;
+            transition: color 0.3s ease;
 
-            @include mobile {
-                font-size: 2.5rem;
+            &:nth-child(1) { animation-delay: 0.4s; }
+            &:nth-child(2) { animation-delay: 0.55s; }
+            &:nth-child(3) { animation-delay: 0.7s; }
+            &:nth-child(4) { animation-delay: 0.85s; }
+
+            a {
+                position: relative;
+                padding-bottom: 0.25rem;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, $main-color, $accent-color);
+                    transition: width 0.3s ease;
+                }
+            }
+
+            &.active a::after,
+            &:hover a::after {
+                width: 100%;
             }
 
             &.active {
                 font-weight: 700;
-                color: $main-color;
+                color: $accent-color;
             }
 
             &:hover {
-                color: $main-color;
+                color: $accent-color;
+            }
+
+            @include mobile {
+                font-size: 2.5rem;
             }
         }
 
@@ -92,5 +135,19 @@ header {
         &.active {
             transform: translateX(0);
         }
+    }
+}
+
+@keyframes headerDrop {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes navFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

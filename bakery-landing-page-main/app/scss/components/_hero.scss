@@ -6,142 +6,70 @@
     .swiper {
         height: 100vh;
 
-        @include tablet {
-            height: unset;
-        }
-
-        .hero__slide {
+        .swiper-slide {
             @include flex(center, center);
-            height: 100%;
-            padding: 0 2rem;
             position: relative;
 
-            @include tablet {
-                padding: 12rem 2rem;
-            }
-
-            &__txt {
-                font-size: 18rem;
+            .hero__slide__txt {
                 position: absolute;
-                top: 7%;
+                top: 15%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 18rem;
                 font-weight: 700;
+                font-family: $font-heading;
                 color: $main-color;
-                text-shadow: 0px 4px 13px rgba(245, 71, 73, 0.4);
-                opacity: 0;
-                transition: opacity 0.5s ease;
-
-                @include tablet {
-                    font-size: 10rem;
-                    top: 14%;
-                }
+                pointer-events: none;
 
                 @include mobile {
-                    display: none;
+                    font-size: 8rem;
+                    top: 20%;
                 }
             }
 
-            &__img {
+            .hero__slide__img {
+                width: 12rem;
+                height: 12rem;
+                background: #e0e0e0;
                 position: relative;
+                transition: width 0.5s ease, height 0.5s ease;
+            }
 
-                .btn {
-                    position: absolute;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: opacity 0.5s ease;
+            .hero__slide__price {
+                position: absolute;
+                top: 1.5rem;
+                left: 1.5rem;
+                background: $main-color;
+                color: $txt-white;
+                padding: 0.4rem 1rem;
+                border-radius: 2rem;
+                font-size: 2rem;
+                font-family: $font-family;
+            }
 
-                    @include mobile {
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
-
-                .btn-left {
-                    left: 100%;
-                    bottom: -3rem;
-
-                    @include tablet {
-                        left: 80%;
-                    }
-
-                    @include mobile {
-                        position: relative;
-                        bottom: unset;
-                        left: unset;
-                    }
-                }
-
-                .btn-right {
-                    right: 100%;
-
-                    @include mobile {
-                        position: relative;
-                        right: unset;
-                    }
-                }
+            .hero__slide__name {
+                position: absolute;
+                top: 50%;
+                left: calc(1.5rem + 5rem);
+                transform: translateY(-50%);
+                font-size: 2rem;
+                font-family: $font-family;
+                color: $main-color;
             }
         }
 
-        .swiper-slide {
-            img {
-                transform: scale(0.4);
-                transform-origin: right bottom;
-                transition: transform 0.6s ease;
-
-                @include mobile {
-                    transform: scale(1);
-                }
+        .swiper-slide-active {
+            .hero__slide__img {
+                width: 40rem;
+                height: 40rem;
             }
+        }
 
-            &-active,
-            &-duplicate-prev {
-                img {
-                    transform: scale(0.4);
-
-                    @include mobile {
-                        transform: scale(1);
-                    }
-                }
-
-                @include mobile {
-                    transform: scale(1);
-                }
-            }
-
-            &-active {
-                img {
-                    transform-origin: left bottom;
-                }
-            }
-
-            &.swiper-slide-next {
-                .hero__slide__img {
-                    @include flex(center, center);
-
-                    @include mobile {
-                        display: block;
-                    }
-                }
-
-                .hero__slide__txt {
-                    opacity: 1;
-                }
-
-                img {
-                    transform: scale(1.4);
-                    transform-origin: center;
-
-                    @include mobile {
-                        transform: scale(1);
-                    }
-                }
-
-                button {
-                    opacity: 1;
-                    visibility: visible;
-                    transition: opacity 0.5s ease, box-shadow 0.3s ease,
-                        transform 0.3s ease;
-                    z-index: 98;
-                }
+        .swiper-slide:not(.swiper-slide-active) {
+            .hero__slide__txt,
+            .hero__slide__price,
+            .hero__slide__name {
+                display: none;
             }
         }
 
