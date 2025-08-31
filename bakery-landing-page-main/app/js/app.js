@@ -54,6 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const menuSwiperEl = document.querySelector('.menu-swiper');
+    if (menuSwiperEl && window.Swiper) {
+        new Swiper('.menu-swiper', {
+            direction: 'horizontal',
+            loop: false,
+            slidesPerView: 1,
+            centeredSlides: true,
+            pagination: {
+                el: '.menu-pagination',
+                type: 'bullets',
+                clickable: true
+            }
+        });
+    }
+
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroSection.addEventListener('mousemove', (e) => {
