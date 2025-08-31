@@ -271,123 +271,64 @@ header.hide {
 .hero .swiper {
   height: 100vh;
 }
-@media only screen and (max-width: 1024px) {
-  .hero .swiper {
-    height: unset;
-  }
-}
-.hero .swiper .hero__slide {
+.hero .swiper .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  padding: 0 2rem;
   position: relative;
 }
-@media only screen and (max-width: 1024px) {
-  .hero .swiper .hero__slide {
-    padding: 12rem 2rem;
-  }
-}
-.hero .swiper .hero__slide__txt {
-  font-size: 18rem;
+.hero .swiper .swiper-slide .hero__slide__txt {
   position: absolute;
-  top: 7%;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18rem;
   font-weight: 700;
   font-family: "Playfair Display", serif;
   color: #8c1c13;
-  text-shadow: 0px 4px 13px rgba(140, 28, 19, 0.4);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-@media only screen and (max-width: 1024px) {
-  .hero .swiper .hero__slide__txt {
-    font-size: 10rem;
-    top: 14%;
-  }
+  pointer-events: none;
 }
 @media only screen and (max-width: 600px) {
-  .hero .swiper .hero__slide__txt {
-    display: none;
+  .hero .swiper .swiper-slide .hero__slide__txt {
+    font-size: 8rem;
+    top: 20%;
   }
 }
-.hero .swiper .hero__slide__img {
+.hero .swiper .swiper-slide .hero__slide__img {
+  width: 12rem;
+  height: 12rem;
+  background: #e0e0e0;
   position: relative;
+  transition: width 0.5s ease, height 0.5s ease;
 }
-.hero .swiper .hero__slide__img .btn {
+.hero .swiper .swiper-slide .hero__slide__price {
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: #8c1c13;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  font-family: "Signika", sans-serif;
 }
-@media only screen and (max-width: 600px) {
-  .hero .swiper .hero__slide__img .btn {
-    opacity: 1;
-    visibility: visible;
-  }
+.hero .swiper .swiper-slide .hero__slide__name {
+  position: absolute;
+  top: 50%;
+  left: 6.5rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-family: "Signika", sans-serif;
+  color: #8c1c13;
 }
-.hero .swiper .hero__slide__img .btn-left {
-  left: 100%;
-  bottom: -3rem;
+.hero .swiper .swiper-slide-active .hero__slide__img {
+  width: 40rem;
+  height: 40rem;
 }
-@media only screen and (max-width: 1024px) {
-  .hero .swiper .hero__slide__img .btn-left {
-    left: 80%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .hero__slide__img .btn-left {
-    position: relative;
-    bottom: unset;
-    left: unset;
-  }
-}
-.hero .swiper .hero__slide__img .btn-right {
-  right: 100%;
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .hero__slide__img .btn-right {
-    position: relative;
-    right: unset;
-  }
-}
-.hero .swiper .swiper-slide img {
-  transform: scale(0.4);
-  transform-origin: right bottom;
-  transition: transform 0.6s ease;
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide img {
-    transform: scale(1);
-  }
-}
-.hero .swiper .swiper-slide.swiper-slide-active .hero__slide__img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide.swiper-slide-active .hero__slide__img {
-    display: block;
-  }
-}
-.hero .swiper .swiper-slide.swiper-slide-active .hero__slide__txt {
-  opacity: 1;
-}
-.hero .swiper .swiper-slide.swiper-slide-active img {
-  transform: scale(1.4);
-  transform-origin: center;
-}
-@media only screen and (max-width: 600px) {
-  .hero .swiper .swiper-slide.swiper-slide-active img {
-    transform: scale(1);
-  }
-}
-.hero .swiper .swiper-slide.swiper-slide-active button {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  z-index: 98;
+.hero .swiper .swiper-slide:not(.swiper-slide-active) .hero__slide__txt,
+.hero .swiper .swiper-slide:not(.swiper-slide-active) .hero__slide__price,
+.hero .swiper .swiper-slide:not(.swiper-slide-active) .hero__slide__name {
+  display: none;
 }
 .hero .swiper .swiper-pagination-bullet {
   width: 15px;
