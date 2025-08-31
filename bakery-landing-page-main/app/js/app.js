@@ -131,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const parallaxItems = document.querySelectorAll('[data-parallax]');
     let lastScrollY = window.pageYOffset;
-    let blurTimeout;
 
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
@@ -150,13 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.style.transform = `translateY(${scrolled * speed}px)`;
             });
         }
-
-        const diff = Math.abs(scrolled - lastScrollY);
-        document.body.style.filter = `blur(${Math.min(diff / 40, 3)}px)`;
-        clearTimeout(blurTimeout);
-        blurTimeout = setTimeout(() => {
-            document.body.style.filter = 'blur(0)';
-        }, 100);
 
         lastScrollY = scrolled;
     });
